@@ -1,0 +1,42 @@
+<div class="conteudo">
+    <form  autocomplete="off" novalidate  #form='ngForm'
+      fxLayout="column wrap" fxLayoutAlign="center center" fxLayoutGap="10px"
+      (ngSubmit)="salvar()">
+
+      <h4>Cadastro de Usuário</h4>
+      <div class="formContent" ngModelGroup="passwords" #passwords="ngModelGroup" appCheckPassword>
+      <mat-form-field >
+        <input  matInput type="text" placeholder="login"  id="login" [(ngModel)]= "usuario.login" name="login">
+        <mat-hint align="end">Digite seu login</mat-hint>
+        <!-- <mat-error *ngIf="hasError('nome', 'required',['pessoa'])">Nome não pode ser nulo</mat-error> -->
+        <!-- <mat-error *ngIf="hasError('nome', 'maxlength')">You have more than 60 characters</mat-error> -->
+      </mat-form-field>
+
+      <mat-form-field >
+        <input #password="ngModel" matInput type="password" name="password" placeholder="Senha"  id="senha"
+        required [(ngModel)]= "usuario.password">
+        <mat-hint align="end">Digite sua senha</mat-hint>
+        <mat-error *ngIf="password.invalid && (password.dirty || password.touched)">Senha não pode ser nulo</mat-error>
+        <!-- <mat-error *ngIf="hasError('nome', 'maxlength')">You have more than 60 characters</mat-error> -->
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input #confirmPassword="ngModel" matInput type="password" placeholder="confirmar senha" name="confirmPassword"
+        required id="confirmarSenha" [(ngModel)]= "usuario.confirmPassword">
+        <mat-hint align="end">Confirme sua senha</mat-hint>
+        <mat-error *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">Confirme a sua senha</mat-error>
+        <!-- <mat-error *ngIf="passwords.errors?.passwordCheck && (confirmPassword.dirty || confirmPassword.touched)">as senhas não correspondem</mat-error> -->
+
+      </mat-form-field>
+    </div>
+    <div class="alert" *ngIf="passwords?.errors?.passwordCheck && (confirmPassword.dirty || confirmPassword.touched)" class="alert alert-danger">
+        Senhas não correspondem
+    </div>
+      <mat-card-actions align="center">
+        <button  mat-raised-button color="primary" [disabled]="!form.valid" >Salvar</button>
+        <button type="button" mat-raised-button color="warn" >Cancelar</button>
+      </mat-card-actions> 
+  
+    </form>
+  
+  </div>

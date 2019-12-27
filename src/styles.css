@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import url(~node_modules/font-awesome/css/font-awesome.css); */
+html, body { 
+    height: 100%;
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    margin-top: 30px;
+    /* width: 100%; */
+}
+  
+td, th {
+    width: 25%;
+}
+
+.conteudo {
+    padding: 20px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    justify-content: space-between;
+}
+
+button , a {
+    cursor: pointer;
+}
+
+
+
+

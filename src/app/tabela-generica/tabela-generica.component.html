@@ -1,0 +1,30 @@
+<p>tabela-generica works!</p>
+
+
+<div class="conteudo">
+    <div class="title">
+        <h3>Listagem de Médicos</h3>
+        <button  mat-raised-button color="primary" [routerLink]="['/medico/cadastro']" routerLinkActive="router-link-active" >Cadastrar novo médico</button>
+    </div>
+    
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+
+            <!-- ID Column -->
+            <div *ngFor="let table of tabelas">
+            <ng-container  *ngFor="let item of table.nameAtributtesColumns" matColumnDef="let table.attributesNames">
+                
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                <td mat-cell >  {{ item }} </td>
+                
+            </ng-container>
+            </div>
+            <tr mat-header-row *matHeaderRowDef="headerColumns"></tr>
+            <tr mat-row *matRowDef="let tabela; columns: headerColumns;"> 
+         </tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+
+</div>

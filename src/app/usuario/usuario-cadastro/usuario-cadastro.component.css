@@ -1,0 +1,39 @@
+
+form{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 500px !important;
+    padding: 40px;
+    box-shadow: 0 0 15px #222;
+}
+mat-card-title{
+    text-align: center !important;
+}
+
+.conteudo {
+    display: flex;
+    justify-content: center;
+    overflow: scroll;
+    padding-top: 30px;
+
+}
+
+button {
+    margin-right: 10px;
+}
+
+.groupName {
+    width: 400px;
+}
+
+.formContent{
+    display: flex;
+    flex-direction: column;
+}
+
+.alert {
+    color: red;
+}
+
+

@@ -1,0 +1,24 @@
+.site-title{
+    color:white;
+    background-color:black;
+  }
+  
+  .site-title .core {text-align:center;}
+  
+  .mat-menu-content button {
+    height:40px !important;
+    margin:0px !important;
+  }
+
+button {
+    background-color: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+mat-toolbar {
+  overflow: hidden;
+  width: 100%;
+  position: fixed;
+}
