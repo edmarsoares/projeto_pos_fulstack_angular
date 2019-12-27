@@ -1,0 +1,88 @@
+<div class="conteudo">
+    <form [formGroup]="formGroup" autocomplete="off" novalidate (ngSubmit)="salvar(formGroup.value)"
+        fxLayout="column wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <h4>Cadastro de paciente</h4>
+        <mat-form-field>
+            <input matInput type="text" placeholder="Seu nome" formControlName="nome" id="nome">
+            <mat-hint align="end">Digite seu nome</mat-hint>
+            <mat-error *ngIf="hasError('nome', 'required')">Nome não pode ser nulo</mat-error>
+            <!-- <mat-error *ngIf="hasError('nome', 'maxlength')">You have more than 60 characters</mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="text" placeholder="telefone" formControlName="telefone" id="telefone">
+            <mat-hint align="end">Adicione um telefone</mat-hint>
+            <mat-error *ngIf="hasError('telefone', ['required'])">Telefone não pode ser nulo</mat-error>
+            <!-- <mat-error *ngIf="hasError('nome', 'maxlength')">You have more than 60 characters</mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput appMascaraCpf maxlength="14" type="text" placeholder="Seu cpf" formControlName="cpf"
+                id="cpf">
+            <mat-hint align="end">Adicione seu cpf</mat-hint>
+            <mat-error *ngIf="hasError('cpf', 'required')">O cpf não pode ser nulo</mat-error>
+            <!-- <mat-error *ngIf="hasError('telefone', 'maxlength')">You have more than 60 characters</mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="text" placeholder="Seu cep" formControlName="cep" id="cep">
+            <mat-hint align="end">Adicione seu cep</mat-hint>
+            <mat-error *ngIf="hasError('cep', 'required')">O cep não pode ser nulo</mat-error>
+            <!-- <mat-error *ngIf="hasError('nome', 'maxlength')">You have more than 60 characters</mat-error> -->
+        </mat-form-field>
+
+
+        <mat-form-field>
+            <div class="groupName">
+                <input matInput type="text" placeholder="email" formControlName="email" id="email">
+            </div>
+            <mat-hint align="end">Adicione seu cpf</mat-hint>
+            <mat-error *ngIf="hasError('email', 'required')">O email não pode ser nulo</mat-error>
+
+            <!-- <mat-error *ngIf="hasError('nome', 'maxlength')">You have more than 60 characters</mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field>
+            <div class="groupName">
+                <input matInput type="text" placeholder="seu logradouro" formControlName="logradouro" id="logradouro">
+            </div>
+            <mat-hint align="end">Adicione seu cpf</mat-hint>
+            <mat-error *ngIf="hasError('logradouro', 'required')">O logradouro não pode ser nulo</mat-error>
+            <!-- <mat-error *ngIf="hasError('nome', 'maxlength')">You have more than 60 characters</mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field>
+            <div class="groupName">
+                <input matInput type="text" placeholder="seu complemento" formControlName="complemento" id="complemento">
+            </div>
+            <mat-hint align="end">Adicione seu cpf</mat-hint>
+            <mat-error *ngIf="hasError('complemento', 'required')">O complemento não pode ser nulo</mat-error>
+            <!-- <mat-error *ngIf="hasError('nome', 'maxlength')">You have more than 60 characters</mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field>
+            <div class="groupName">
+                <input matInput type="text" placeholder="seu bairro" formControlName="bairro" id="bairro">
+            </div>
+            <mat-hint align="end">Adicione seu cpf</mat-hint>
+            <mat-error *ngIf="hasError('bairro', 'required')">O bairro não pode ser nulo</mat-error>
+            <!-- <mat-error *ngIf="hasError('nome', 'maxlength')">You have more than 60 characters</mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field>
+            <div class="groupName">
+                <input matInput type="text" placeholder="uf" formControlName="uf" id="uf">
+            </div>
+            <mat-hint align="end">Adicione seu cpf</mat-hint>
+            <mat-error *ngIf="hasError('uf', 'required')">O uf não pode ser nulo</mat-error>
+            <!-- <mat-error *ngIf="hasError('nome', 'maxlength')">You have more than 60 characters</mat-error> -->
+        </mat-form-field>
+
+        <mat-card-actions align="center">
+            <button mat-raised-button color="primary" [disabled]="!formGroup.valid">Salvar</button>
+            <button type="button" mat-raised-button color="warn" (click)="onCancel()">Cancelar</button>
+        </mat-card-actions>
+
+    </form>
+
+</div>

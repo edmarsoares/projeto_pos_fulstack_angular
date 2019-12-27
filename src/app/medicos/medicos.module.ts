@@ -13,10 +13,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MedicoResolveService } from './service/medico-resolve.service';
 import { TabelaGenericaComponent } from '../tabela-generica/tabela-generica.component';
 import { MascaraCpfDirective } from '../mascara/mascara-cpf.directive';
+import { ModuloGenericoModule } from '../modulo-generico/modulo-generico.module';
 
 
 @NgModule({
-  declarations: [ListarComponent, EditarComponent,TabelaGenericaComponent, MascaraCpfDirective], 
+  declarations: [ListarComponent, EditarComponent,TabelaGenericaComponent], 
   imports: [
     CommonModule,
     MedicosRoutingModule,
@@ -33,7 +34,8 @@ import { MascaraCpfDirective } from '../mascara/mascara-cpf.directive';
     ReactiveFormsModule,
     MatCardModule,
     MatButtonModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    ModuloGenericoModule
     
   ],
   exports: [

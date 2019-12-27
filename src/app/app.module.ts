@@ -15,6 +15,8 @@ import { OnlyNumParPipe } from './pipes/only-num-par.pipe';
 import { TestComponent } from './test/test.component';
 import { UsuarioModule } from './usuario/usuario.module';
 import { CheckPasswordDirective } from './validators/check-password.directive';
+import { PacienteModule } from './paciente/paciente.module';
+import { MascaraCpfDirective } from './mascara/mascara-cpf.directive';
 
 
 
@@ -24,7 +26,6 @@ import { CheckPasswordDirective } from './validators/check-password.directive';
     MenuComponent,
     OnlyNumParPipe,
     TestComponent,
-    // MascaraCpfDirective,
      
   ],
   imports: [
@@ -33,6 +34,7 @@ import { CheckPasswordDirective } from './validators/check-password.directive';
     BrowserAnimationsModule,
     MedicosModule,
     UsuarioModule,
+    PacienteModule,
     MatSidenavModule,
     MatNativeDateModule,
     MatListModule,
