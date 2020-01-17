@@ -16,8 +16,6 @@ import { TestComponent } from './test/test.component';
 import { UsuarioModule } from './usuario/usuario.module';
 import { CheckPasswordDirective } from './validators/check-password.directive';
 import { PacienteModule } from './paciente/paciente.module';
-import { MascaraCpfDirective } from './mascara/mascara-cpf.directive';
-
 
 
 @NgModule({
@@ -26,6 +24,7 @@ import { MascaraCpfDirective } from './mascara/mascara-cpf.directive';
     MenuComponent,
     OnlyNumParPipe,
     TestComponent,
+    
      
   ],
   imports: [

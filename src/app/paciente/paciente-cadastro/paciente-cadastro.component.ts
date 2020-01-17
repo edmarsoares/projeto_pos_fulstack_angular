@@ -39,8 +39,6 @@ export class PacienteCadastroComponent implements OnInit {
 
   }
 
-
-
   public hasError = (controlName: string, errorName: string, formGroupName?: string[]) => {
     return this.formGroup.controls[controlName].hasError(errorName);
   }
@@ -50,6 +48,8 @@ export class PacienteCadastroComponent implements OnInit {
   }
 
   salvar(formGroupValue: Paciente) {
+
+    formGroupValue.cep = formGroupValue.cep.replace("-", "")
     const operacao = this.isEdicao ? 'atualizar' : 'salvar';
 
     this.pacienteService.consultarCep(formGroupValue.cep).subscribe(cpf => {
@@ -66,25 +66,24 @@ export class PacienteCadastroComponent implements OnInit {
       this.pacienteService[operacao](formGroupValue).subscribe(() => {
         this.showMessageSuccess();
       }, (err) => {
-        Swal.fire(
-          'Atenção',
-          'Houve um problema ao tentar cadastrar o paciente, verifique se existe rede disponível',
-          'warning'
-        )
-  
+       this.shoWMessageError();
       })
   
     }, (error) => {
-      Swal.fire(
-        'Atenção',
-        'Cep inválido! por favor informe um cep válido',
-        'warning'
-      );
-      return;
+     
+      this.shoWMessageError();
 
     })
 
     
+  }
+
+  shoWMessageError(){
+    Swal.fire(
+      'Atenção',
+      'Houve um problema ao tentar cadastrar o paciente, verifique se existe rede disponível',
+      'warning'
+    )
   }
 
   showMessageSuccess() {
