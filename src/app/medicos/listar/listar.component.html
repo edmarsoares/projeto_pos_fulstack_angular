@@ -18,22 +18,22 @@
             </ng-container>
 
             <!-- Progress Column -->
-            <ng-container matColumnDef="nome">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
-                <td mat-cell *matCellDef="let medico"> {{medico.pessoa.nome}} </td>
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+                <td mat-cell *matCellDef="let medico"> {{medico.email}} </td>
             </ng-container>
 
             <!-- Name Column -->
-            <ng-container matColumnDef="cpf">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Cpf </th>
-                <td mat-cell *matCellDef="let medico"> {{medico.pessoa.cpf}} </td>
+            <ng-container matColumnDef="nome">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
+                <td mat-cell *matCellDef="let medico"> {{medico.nome}} </td>
             </ng-container>
 
             <!-- Color Column -->
-            <ng-container matColumnDef="email">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
-                <td mat-cell *matCellDef="let medico" [style.color]="medico.pessoa.usuario.login">
-                    {{medico.pessoa.usuario.login}} </td>
+            <ng-container matColumnDef="crm">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Crm </th>
+                <td mat-cell *matCellDef="let medico" >
+                    {{medico.crm}} </td>
             </ng-container>
 
             <!-- Action Column delete-->

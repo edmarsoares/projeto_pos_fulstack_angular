@@ -49,20 +49,42 @@ export class PacienteCadastroComponent implements OnInit {
 
   }
 
-  salvar(formGroupValue) {
+  salvar(formGroupValue: Paciente) {
     const operacao = this.isEdicao ? 'atualizar' : 'salvar';
 
-    this.pacienteService[operacao](formGroupValue).subscribe(() => {
-      this.showMessageSuccess();
-    }, (err) => {
+    this.pacienteService.consultarCep(formGroupValue.cep).subscribe(cpf => {
+
+      if (cpf.erro === true) { 
+        Swal.fire(
+          'Atenção',
+          'Cep inválido! por favor informe um cep válido',
+          'warning'
+        );
+        return;
+      }
+
+      this.pacienteService[operacao](formGroupValue).subscribe(() => {
+        this.showMessageSuccess();
+      }, (err) => {
+        Swal.fire(
+          'Atenção',
+          'Houve um problema ao tentar cadastrar o paciente, verifique se existe rede disponível',
+          'warning'
+        )
+  
+      })
+  
+    }, (error) => {
       Swal.fire(
         'Atenção',
-        'Houve um problema ao tentar cadastrar o paciente, verifique se existe rede disponível',
+        'Cep inválido! por favor informe um cep válido',
         'warning'
-      )
+      );
+      return;
 
     })
 
+    
   }
 
   showMessageSuccess() {

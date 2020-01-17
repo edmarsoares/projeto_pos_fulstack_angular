@@ -17,8 +17,8 @@ import { Subscription } from 'rxjs';
 export class ListarComponent implements OnInit {
 
   //angular material
-  displayedColumns: string[] = ['id', 'nome', 'cpf', 'email','deletar','editar'];
-  columns = ['id', 'nome', 'cpf', 'email'];
+  displayedColumns: string[] = ['id', 'email', 'nome', 'crm','deletar','editar'];
+  columns = ['id', 'email', 'nome', 'crm'];
   dataSource: MatTableDataSource<Medico>;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;

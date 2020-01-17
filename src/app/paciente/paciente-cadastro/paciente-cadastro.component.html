@@ -25,7 +25,7 @@
         </mat-form-field>
 
         <mat-form-field>
-            <input matInput type="text" placeholder="Seu cep" formControlName="cep" id="cep">
+            <input matInput type="text" placeholder="Seu cep" maxlength="8" formControlName="cep" id="cep">
             <mat-hint align="end">Adicione seu cep</mat-hint>
             <mat-error *ngIf="hasError('cep', 'required')">O cep não pode ser nulo</mat-error>
             <!-- <mat-error *ngIf="hasError('nome', 'maxlength')">You have more than 60 characters</mat-error> -->

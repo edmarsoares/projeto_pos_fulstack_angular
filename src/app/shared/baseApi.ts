@@ -6,8 +6,8 @@ import {map} from 'rxjs/operators';
 
 
 export abstract class BaseApi<T> {
-    baseUrl = "http://5dd975f118c0a50014576483.mockapi.io/api";
-    constructor(private http: HttpClient, private path:string) {
+    private baseUrl = "http://5dd975f118c0a50014576483.mockapi.io/api";
+    constructor(protected http: HttpClient, private path:string) {
         
     }
 
